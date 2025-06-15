@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro en Deporty</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <main class="page-container" data-page="registration">
+        <div class="form-container" data-component="registration-form">
+            
+            <a href="index.html" class="form-container__back-button" aria-label="Regresar a la página de inicio" data-action="go-back-home">&larr; Regresar</a>
+            
+            <a href="index.html" class="form-container__logo-link" aria-label="Página de inicio de Deporty">
+                <img src="assets/images/icon.png" alt="Logo de Deporty" class="form-container__logo">
+            </a>
+
+            <h2 class="form-container__title">Crea tu cuenta en Deporty</h2>
+            
+            <form id="registrationForm" class="form">
+                <div class="form__group">
+                    <label for="role" class="form__label">Elige tu rol</label>
+                    <select id="role" name="role" class="form__input" data-field="role-selector" required>
+                        <option value="" disabled selected>Selecciona una opción...</option>
+                        <option value="athlete">Deportista</option>
+                        <option value="coach">Entrenador</option>
+                        <option value="judge">Juez</option>
+                        <option value="club">Club</option>
+                    </select>
+                </div>
+                
+                <div id="dynamic-fields-section" style="display: none;">
+                    
+                    <div id="groupFullName" class="form__group-dynamic">
+                        <label for="fullName" class="form__label">Nombre Completo</label>
+                        <input type="text" id="fullName" name="fullName" class="form__input" data-field="full-name">
+                    </div>
+                    <div id="groupBusinessName" class="form__group-dynamic">
+                        <label for="businessName" class="form__label">Razón Social</label>
+                        <input type="text" id="businessName" name="businessName" class="form__input" data-field="business-name">
+                    </div>
+
+                    <div id="fields-natural-person" class="form__group-role">
+                        <fieldset class="form__fieldset">
+                            <legend class="form__legend">Información Personal</legend>
+                            <div class="form__group">
+                                <label for="birthDate" class="form__label">Fecha de Nacimiento</label>
+                                <input type="date" id="birthDate" name="birthDate" class="form__input" data-field="birth-date">
+                                <input type="hidden" id="calculatedAge" name="calculatedAge">
+                                <input type="hidden" id="calculatedCategory" name="calculatedCategory">
+                            </div>
+                            <div class="form__group">
+                                <label for="gender" class="form__label">Género</label>
+                                <select id="gender" name="gender" class="form__input" data-field="gender">
+                                    <option value="femenino">Femenino</option>
+                                    <option value="masculino">Masculino</option>
+                                </select>
+                            </div>
+                        </fieldset>
+                        <fieldset class="form__fieldset">
+                            <legend class="form__legend">Ubicación</legend>
+                            <div class="form__group">
+                                <label for="country" class="form__label">País</label>
+                                <input type="text" id="country" name="country" class="form__input" value="Colombia" readonly>
+                            </div>
+                            <div class="form__group">
+                                <label for="department" class="form__label">Departamento</label>
+                                <select id="department" name="department" class="form__input">
+                                    <option value="" disabled selected>Selecciona...</option>
+                                    <option value="norte-santander">Norte de Santander</option>
+                                    <option value="antioquia">Antioquia</option>
+                                    <option value="valle-cauca">Valle del Cauca</option>
+                                    <option value="bogota">Bogotá D.C.</option>
+                                </select>
+                            </div>
+                            <div class="form__group">
+                                <label for="city" class="form__label">Ciudad / Municipio</label>
+                                <select id="city" name="city" class="form__input" disabled>
+                                    <option value="">Elige un departamento...</option>
+                                </select>
+                            </div>
+                        </fieldset>
+                    </div>
+
+                    <fieldset class="form__fieldset">
+                        <legend>Datos de la cuenta</legend>
+                        <div class="form__group">
+                            <label for="email" class="form__label">Correo Electrónico</label>
+                            <input type="email" id="email" name="email" class="form__input" data-field="email" required>
+                        </div>
+                        <div class="form__group">
+                            <label for="password" class="form__label">Contraseña</label>
+                            <input type="password" id="password" name="password" class="form__input" data-field="password" required>
+                        </div>
+                    </fieldset>
+                    
+                    <button type="submit" class="button button--primary button--full-width" data-action="submit-registration">Crear Cuenta</button>
+                </div>
+            </form>
+
+            <div class="form__footer">
+                <p>¿Ya tienes una cuenta? <a href="login.html">Inicia Sesión</a></p>
+            </div>
+        </div>
+    </main>
+    <script src="assets/js/registration.js"></script>
+</body>
+</html>
