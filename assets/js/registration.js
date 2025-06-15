@@ -10,10 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- SIMULACIÓN DE BASE DE DATOS ---
     // En el futuro, estos datos vendrán de tu servidor.
     const locations = {
-        'norte-santander': ['Cúcuta', 'Pamplona', 'Ocaña', 'Los Patios'],
-        'antioquia': ['Medellín', 'Envigado', 'Bello', 'Itagüí'],
-        'valle-cauca': ['Cali', 'Palmira', 'Buenaventura'],
-        'bogota': ['Bogotá D.C.']
+        'norte-santander': ['Cúcuta', 'Pamplona', 'Ocaña', 'Los Patios']
     };
 
     // --- SELECCIÓN DE ELEMENTOS DEL DOM ---
