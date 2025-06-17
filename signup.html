@@ -18,7 +18,7 @@
 
             <h2 class="form-container__title">Crea tu cuenta en Deporty</h2>
             
-            <form id="registrationForm" class="form">
+            <form id="registrationForm" class="form" novalidate>
                 <div class="form__group">
                     <label for="role" class="form__label">Elige tu rol</label>
                     <select id="role" name="role" class="form__input" data-field="role-selector" required>
@@ -34,25 +34,25 @@
                     
                     <div id="groupFullName" class="form__group-dynamic">
                         <label for="fullName" class="form__label">Nombre Completo</label>
-                        <input type="text" id="fullName" name="fullName" class="form__input" data-field="full-name">
+                        <input type="text" id="fullName" name="fullName" class="form__input" data-field="full-name" required>
                     </div>
                     <div id="groupBusinessName" class="form__group-dynamic">
                         <label for="businessName" class="form__label">Razón Social</label>
-                        <input type="text" id="businessName" name="businessName" class="form__input" data-field="business-name">
+                        <input type="text" id="businessName" name="businessName" class="form__input" data-field="business-name" required>
                     </div>
 
                     <div id="fields-natural-person" class="form__group-role">
                         <fieldset class="form__fieldset">
                             <legend class="form__legend">Información Personal</legend>
-                            <div class="form__group">
+                            <div id="groupBirthDate" class="form__group">
                                 <label for="birthDate" class="form__label">Fecha de Nacimiento</label>
-                                <input type="date" id="birthDate" name="birthDate" class="form__input" data-field="birth-date">
+                                <input type="date" id="birthDate" name="birthDate" class="form__input" data-field="birth-date" required>
                                 <input type="hidden" id="calculatedAge" name="calculatedAge">
                                 <input type="hidden" id="calculatedCategory" name="calculatedCategory">
                             </div>
-                            <div class="form__group">
+                            <div id="groupGender" class="form__group">
                                 <label for="gender" class="form__label">Género</label>
-                                <select id="gender" name="gender" class="form__input" data-field="gender">
+                                <select id="gender" name="gender" class="form__input" data-field="gender" required>
                                     <option value="femenino">Femenino</option>
                                     <option value="masculino">Masculino</option>
                                 </select>
@@ -66,7 +66,7 @@
                             </div>
                             <div class="form__group">
                                 <label for="department" class="form__label">Departamento</label>
-                                <select id="department" name="department" class="form__input">
+                                <select id="department" name="department" class="form__input" required>
                                     <option value="" disabled selected>Selecciona...</option>
                                     <option value="norte-santander">Norte de Santander</option>
                                     <option value="antioquia">Antioquia</option>
@@ -76,7 +76,7 @@
                             </div>
                             <div class="form__group">
                                 <label for="city" class="form__label">Ciudad / Municipio</label>
-                                <select id="city" name="city" class="form__input" disabled>
+                                <select id="city" name="city" class="form__input" disabled required>
                                     <option value="">Elige un departamento...</option>
                                 </select>
                             </div>
@@ -91,9 +91,15 @@
                         </div>
                         <div class="form__group">
                             <label for="password" class="form__label">Contraseña</label>
-                            <input type="password" id="password" name="password" class="form__input" data-field="password" required>
+                            <input type="password" id="password" name="password" class="form__input" data-field="password" required minlength="8">
+                        </div>
+                        <div class="form__group">
+                            <label for="confirmPassword" class="form__label">Confirmar Contraseña</label>
+                            <input type="password" id="confirmPassword" name="confirmPassword" class="form__input" data-field="confirm-password" required minlength="8">
                         </div>
                     </fieldset>
+
+                    <div id="form-message" class="form__message"></div>
                     
                     <button type="submit" class="button button--primary button--full-width" data-action="submit-registration">Crear Cuenta</button>
                 </div>
